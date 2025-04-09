@@ -1,0 +1,147 @@
+2023-05-10 17:42:44,355 - Discovery - Open Intent Discovery Begin...
+2023-05-10 17:42:44,355 - Discovery - Parameters Initialization...
+2023-05-10 17:42:44,356 - Discovery - ============================== Params ==============================
+2023-05-10 17:42:44,356 - Discovery - type:	open_intent_discovery
+2023-05-10 17:42:44,356 - Discovery - logger_name:	Discovery
+2023-05-10 17:42:44,356 - Discovery - log_dir:	logs
+2023-05-10 17:42:44,356 - Discovery - dataset:	banking
+2023-05-10 17:42:44,356 - Discovery - known_cls_ratio:	0.75
+2023-05-10 17:42:44,357 - Discovery - labeled_ratio:	0.1
+2023-05-10 17:42:44,357 - Discovery - cluster_num_factor:	1.0
+2023-05-10 17:42:44,357 - Discovery - method:	DeepAligned
+2023-05-10 17:42:44,357 - Discovery - train:	True
+2023-05-10 17:42:44,357 - Discovery - save_model:	False
+2023-05-10 17:42:44,357 - Discovery - backbone:	bert_mix
+2023-05-10 17:42:44,357 - Discovery - setting:	semi_supervised
+2023-05-10 17:42:44,357 - Discovery - config_file_name:	DeepAligned
+2023-05-10 17:42:44,357 - Discovery - seed:	0
+2023-05-10 17:42:44,357 - Discovery - temp:	0.3
+2023-05-10 17:42:44,357 - Discovery - gpu_id:	0
+2023-05-10 17:42:44,357 - Discovery - pipe_results_path:	pipe_results
+2023-05-10 17:42:44,357 - Discovery - data_dir:	/home/zhangpanpan/workspace/task/2022/09/testing/open_intent_discovery_20230417_bert_mix/../data
+2023-05-10 17:42:44,357 - Discovery - output_dir:	/home/zhangpanpan/workspace/task/2022/09/testing/open_intent_discovery_20230417_bert_mix/../outputs
+2023-05-10 17:42:44,357 - Discovery - model_dir:	models
+2023-05-10 17:42:44,357 - Discovery - result_dir:	results
+2023-05-10 17:42:44,357 - Discovery - results_file_name:	results_DeepAligned_test_20230510.csv
+2023-05-10 17:42:44,357 - Discovery - save_results:	True
+2023-05-10 17:42:44,357 - Discovery - task_output_dir:	/home/zhangpanpan/workspace/task/2022/09/testing/open_intent_discovery_20230417_bert_mix/../outputs/open_intent_discovery
+2023-05-10 17:42:44,357 - Discovery - method_output_dir:	/home/zhangpanpan/workspace/task/2022/09/testing/open_intent_discovery_20230417_bert_mix/../outputs/open_intent_discovery/DeepAligned_banking_0.75_0.1_bert_mix_0
+2023-05-10 17:42:44,357 - Discovery - model_output_dir:	/home/zhangpanpan/workspace/task/2022/09/testing/open_intent_discovery_20230417_bert_mix/../outputs/open_intent_discovery/DeepAligned_banking_0.75_0.1_bert_mix_0/models
+2023-05-10 17:42:44,357 - Discovery - bert_model:	/home/zhangpanpan/downloads/lib/pretrained_models/uncased_L-12_H-768_A-12/
+2023-05-10 17:42:44,357 - Discovery - max_seq_length:	None
+2023-05-10 17:42:44,357 - Discovery - num_pretrain_epochs:	100
+2023-05-10 17:42:44,357 - Discovery - num_train_epochs:	100
+2023-05-10 17:42:44,358 - Discovery - num_labels:	None
+2023-05-10 17:42:44,358 - Discovery - freeze_bert_parameters:	True
+2023-05-10 17:42:44,358 - Discovery - feat_dim:	768
+2023-05-10 17:42:44,358 - Discovery - warmup_proportion:	0.1
+2023-05-10 17:42:44,358 - Discovery - lr_pre:	5e-05
+2023-05-10 17:42:44,358 - Discovery - lr:	5e-05
+2023-05-10 17:42:44,358 - Discovery - loss_fct:	CrossEntropyLoss
+2023-05-10 17:42:44,358 - Discovery - activation:	tanh
+2023-05-10 17:42:44,358 - Discovery - train_batch_size:	128
+2023-05-10 17:42:44,358 - Discovery - eval_batch_size:	64
+2023-05-10 17:42:44,358 - Discovery - test_batch_size:	64
+2023-05-10 17:42:44,358 - Discovery - wait_patient:	20
+2023-05-10 17:42:44,358 - Discovery - ============================== End Params ==============================
+2023-05-10 17:42:44,358 - Discovery - Data and Model Preparation...
+2023-05-10 17:42:44,380 - Discovery - The number of known intents is 58
+2023-05-10 17:42:44,382 - Discovery - Lists of known labels are: ['pending_top_up', 'why_verify_identity', 'top_up_failed', 'supported_cards_and_currencies', 'exchange_via_app', 'declined_card_payment', 'unable_to_verify_identity', 'exchange_rate', 'passcode_forgotten', 'verify_my_identity', 'declined_cash_withdrawal', 'top_up_limits', 'apple_pay_or_google_pay', 'lost_or_stolen_card', 'lost_or_stolen_phone', 'balance_not_updated_after_cheque_or_cash_deposit', 'change_pin', 'getting_virtual_card', 'pin_blocked', 'get_disposable_virtual_card', 'top_up_reverted', 'reverted_card_payment?', 'topping_up_by_card', 'top_up_by_bank_transfer_charge', 'virtual_card_not_working', 'balance_not_updated_after_bank_transfer', 'request_refund', 'verify_source_of_funds', 'atm_support', 'disposable_card_limits', 'pending_transfer', 'age_limit', 'declined_transfer', 'card_acceptance', 'compromised_card', 'card_about_to_expire', 'edit_personal_details', 'getting_spare_card', 'top_up_by_card_charge', 'activate_my_card', 'exchange_charge', 'transfer_not_received_by_recipient', 'card_linking', 'wrong_exchange_rate_for_cash_withdrawal', 'card_swallowed', 'direct_debit_payment_not_recognised', 'transaction_charged_twice', 'extra_charge_on_statement', 'card_payment_wrong_exchange_rate', 'Refund_not_showing_up', 'wrong_amount_of_cash_received', 'card_not_working', 'automatic_top_up', 'terminate_account', 'card_payment_fee_charged', 'receiving_money', 'cash_withdrawal_charge', 'verify_top_up']
+2023-05-10 17:42:46,738 - Discovery - Number of labeled training samples = 673
+2023-05-10 17:42:46,739 - Discovery - Number of unlabeled training samples = 8330
+2023-05-10 17:42:46,746 - Discovery - Number of evaluation samples = 748
+2023-05-10 17:42:46,759 - Discovery - Number of testing samples = 3080
+2023-05-10 17:42:56,817 - Discovery - Freeze all parameters but the last layer for efficiency
+2023-05-10 17:43:07,875 - Discovery - Freeze all parameters but the last layer for efficiency
+2023-05-10 17:43:08,223 - Discovery - Pre-raining start...
+2023-05-10 17:43:09,898 - Discovery - ***** Epoch: 1: Eval results *****
+2023-05-10 17:43:09,898 - Discovery -   best_score = 0
+2023-05-10 17:43:09,898 - Discovery -   eval_score = 2.27
+2023-05-10 17:43:09,899 - Discovery -   train_loss = 4.065245787302653
+2023-05-10 17:43:11,186 - Discovery - ***** Epoch: 2: Eval results *****
+2023-05-10 17:43:11,186 - Discovery -   best_score = 2.27
+2023-05-10 17:43:11,186 - Discovery -   eval_score = 3.07
+2023-05-10 17:43:11,186 - Discovery -   train_loss = 4.044739643732707
+2023-05-10 17:43:12,362 - Discovery - ***** Epoch: 3: Eval results *****
+2023-05-10 17:43:12,362 - Discovery -   best_score = 3.07
+2023-05-10 17:43:12,362 - Discovery -   eval_score = 4.68
+2023-05-10 17:43:12,362 - Discovery -   train_loss = 4.003075162569682
+2023-05-10 17:43:13,581 - Discovery - ***** Epoch: 4: Eval results *****
+2023-05-10 17:43:13,581 - Discovery -   best_score = 4.68
+2023-05-10 17:43:13,581 - Discovery -   eval_score = 6.02
+2023-05-10 17:43:13,581 - Discovery -   train_loss = 3.9182139237721763
+2023-05-10 17:43:14,684 - Discovery - ***** Epoch: 5: Eval results *****
+2023-05-10 17:43:14,684 - Discovery -   best_score = 6.02
+2023-05-10 17:43:14,684 - Discovery -   eval_score = 13.77
+2023-05-10 17:43:14,684 - Discovery -   train_loss = 3.786107897758484
+2023-05-10 17:43:15,789 - Discovery - ***** Epoch: 6: Eval results *****
+2023-05-10 17:43:15,790 - Discovery -   best_score = 13.77
+2023-05-10 17:43:15,790 - Discovery -   eval_score = 32.09
+2023-05-10 17:43:15,790 - Discovery -   train_loss = 3.5241543849309287
+2023-05-10 17:43:17,022 - Discovery - ***** Epoch: 7: Eval results *****
+2023-05-10 17:43:17,022 - Discovery -   best_score = 32.09
+2023-05-10 17:43:17,023 - Discovery -   eval_score = 44.92
+2023-05-10 17:43:17,023 - Discovery -   train_loss = 3.0685898462931314
+2023-05-10 17:43:18,233 - Discovery - ***** Epoch: 8: Eval results *****
+2023-05-10 17:43:18,233 - Discovery -   best_score = 44.92
+2023-05-10 17:43:18,233 - Discovery -   eval_score = 55.08
+2023-05-10 17:43:18,233 - Discovery -   train_loss = 2.533972462018331
+2023-05-10 17:43:19,566 - Discovery - ***** Epoch: 9: Eval results *****
+2023-05-10 17:43:19,566 - Discovery -   best_score = 55.08
+2023-05-10 17:43:19,566 - Discovery -   eval_score = 62.57
+2023-05-10 17:43:19,567 - Discovery -   train_loss = 2.0347468654314675
+2023-05-10 17:43:20,801 - Discovery - ***** Epoch: 10: Eval results *****
+2023-05-10 17:43:20,801 - Discovery -   best_score = 62.57
+2023-05-10 17:43:20,801 - Discovery -   eval_score = 66.31
+2023-05-10 17:43:20,801 - Discovery -   train_loss = 1.5913396279017131
+2023-05-10 17:43:21,986 - Discovery - ***** Epoch: 11: Eval results *****
+2023-05-10 17:43:21,986 - Discovery -   best_score = 66.31
+2023-05-10 17:43:21,986 - Discovery -   eval_score = 70.72
+2023-05-10 17:43:21,986 - Discovery -   train_loss = 1.2394412954648335
+2023-05-10 17:43:23,164 - Discovery - ***** Epoch: 12: Eval results *****
+2023-05-10 17:43:23,164 - Discovery -   best_score = 70.72
+2023-05-10 17:43:23,164 - Discovery -   eval_score = 72.59
+2023-05-10 17:43:23,164 - Discovery -   train_loss = 1.0108071168263753
+2023-05-10 17:43:24,523 - Discovery - ***** Epoch: 13: Eval results *****
+2023-05-10 17:43:24,523 - Discovery -   best_score = 72.59
+2023-05-10 17:43:24,523 - Discovery -   eval_score = 75.13
+2023-05-10 17:43:24,523 - Discovery -   train_loss = 0.8034421702226003
+2023-05-10 17:43:25,704 - Discovery - ***** Epoch: 14: Eval results *****
+2023-05-10 17:43:25,704 - Discovery -   best_score = 75.13
+2023-05-10 17:43:25,704 - Discovery -   eval_score = 78.48
+2023-05-10 17:43:25,704 - Discovery -   train_loss = 0.6380053808291754
+2023-05-10 17:43:26,853 - Discovery - ***** Epoch: 15: Eval results *****
+2023-05-10 17:43:26,853 - Discovery -   best_score = 78.48
+2023-05-10 17:43:26,853 - Discovery -   eval_score = 79.14
+2023-05-10 17:43:26,853 - Discovery -   train_loss = 0.5132792741060257
+2023-05-10 17:43:28,003 - Discovery - ***** Epoch: 16: Eval results *****
+2023-05-10 17:43:28,003 - Discovery -   best_score = 79.14
+2023-05-10 17:43:28,003 - Discovery -   eval_score = 78.07
+2023-05-10 17:43:28,003 - Discovery -   train_loss = 0.4416451156139374
+2023-05-10 17:43:29,096 - Discovery - ***** Epoch: 17: Eval results *****
+2023-05-10 17:43:29,096 - Discovery -   best_score = 79.14
+2023-05-10 17:43:29,096 - Discovery -   eval_score = 79.81
+2023-05-10 17:43:29,096 - Discovery -   train_loss = 0.3803071329991023
+2023-05-10 17:43:30,238 - Discovery - ***** Epoch: 18: Eval results *****
+2023-05-10 17:43:30,238 - Discovery -   best_score = 79.81
+2023-05-10 17:43:30,238 - Discovery -   eval_score = 80.75
+2023-05-10 17:43:30,238 - Discovery -   train_loss = 0.3172481755415599
+2023-05-10 17:43:30,271 - Discovery - Pre-training finished...
+2023-05-10 17:43:30,292 - Discovery - Training Begin...
+2023-05-10 17:43:30,293 - Discovery - Training Finished...
+2023-05-10 17:43:30,293 - Discovery - Testing begin...
+2023-05-10 17:44:15,038 - Discovery - ***** Test: Confusion Matrix *****
+2023-05-10 17:44:15,038 - Discovery - [[0 0 0 ... 0 0 0]
+ [0 0 0 ... 2 0 0]
+ [0 0 0 ... 0 0 0]
+ ...
+ [0 0 0 ... 0 0 0]
+ [0 0 0 ... 0 0 0]
+ [0 0 0 ... 0 0 0]]
+2023-05-10 17:44:15,038 - Discovery - ***** Test results *****
+2023-05-10 17:44:15,039 - Discovery -   ACC = 62.44
+2023-05-10 17:44:15,039 - Discovery -   ARI = 49.39
+2023-05-10 17:44:15,039 - Discovery -   NMI = 76.06
+2023-05-10 17:44:15,039 - Discovery - Testing finished...
+2023-05-10 17:44:15,039 - Discovery - Results saved in results/results_DeepAligned_test_20230510.csv
+2023-05-10 17:44:15,072 - Discovery - Open Intent Discovery Finished...

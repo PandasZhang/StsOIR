@@ -1,0 +1,60 @@
+2023-05-08 11:03:08,980 - Discovery - Open Intent Discovery Begin...
+2023-05-08 11:03:08,980 - Discovery - Parameters Initialization...
+2023-05-08 11:03:08,981 - Discovery - ============================== Params ==============================
+2023-05-08 11:03:08,981 - Discovery - type:	open_intent_discovery
+2023-05-08 11:03:08,981 - Discovery - logger_name:	Discovery
+2023-05-08 11:03:08,981 - Discovery - log_dir:	logs
+2023-05-08 11:03:08,981 - Discovery - dataset:	banking
+2023-05-08 11:03:08,981 - Discovery - known_cls_ratio:	0.75
+2023-05-08 11:03:08,981 - Discovery - labeled_ratio:	0.1
+2023-05-08 11:03:08,981 - Discovery - cluster_num_factor:	1.0
+2023-05-08 11:03:08,981 - Discovery - method:	DeepAligned
+2023-05-08 11:03:08,981 - Discovery - train:	True
+2023-05-08 11:03:08,981 - Discovery - save_model:	False
+2023-05-08 11:03:08,981 - Discovery - backbone:	bert_mix
+2023-05-08 11:03:08,981 - Discovery - setting:	semi_supervised
+2023-05-08 11:03:08,981 - Discovery - config_file_name:	DeepAligned
+2023-05-08 11:03:08,981 - Discovery - seed:	0
+2023-05-08 11:03:08,981 - Discovery - temp:	0.3
+2023-05-08 11:03:08,981 - Discovery - gpu_id:	0
+2023-05-08 11:03:08,981 - Discovery - pipe_results_path:	pipe_results
+2023-05-08 11:03:08,981 - Discovery - data_dir:	/home/zhangpanpan/workspace/task/2022/09/testing/open_intent_discovery_20230417_bert_mix/../data
+2023-05-08 11:03:08,981 - Discovery - output_dir:	/home/zhangpanpan/workspace/task/2022/09/testing/open_intent_discovery_20230417_bert_mix/../outputs
+2023-05-08 11:03:08,981 - Discovery - model_dir:	models
+2023-05-08 11:03:08,981 - Discovery - result_dir:	results
+2023-05-08 11:03:08,981 - Discovery - results_file_name:	results_DeepAligned_test_20230508.csv
+2023-05-08 11:03:08,981 - Discovery - save_results:	True
+2023-05-08 11:03:08,981 - Discovery - task_output_dir:	/home/zhangpanpan/workspace/task/2022/09/testing/open_intent_discovery_20230417_bert_mix/../outputs/open_intent_discovery
+2023-05-08 11:03:08,981 - Discovery - method_output_dir:	/home/zhangpanpan/workspace/task/2022/09/testing/open_intent_discovery_20230417_bert_mix/../outputs/open_intent_discovery/DeepAligned_banking_0.75_0.1_bert_mix_0
+2023-05-08 11:03:08,981 - Discovery - model_output_dir:	/home/zhangpanpan/workspace/task/2022/09/testing/open_intent_discovery_20230417_bert_mix/../outputs/open_intent_discovery/DeepAligned_banking_0.75_0.1_bert_mix_0/models
+2023-05-08 11:03:08,982 - Discovery - bert_model:	/home/zhangpanpan/downloads/lib/pretrained_models/uncased_L-12_H-768_A-12/
+2023-05-08 11:03:08,982 - Discovery - max_seq_length:	None
+2023-05-08 11:03:08,982 - Discovery - num_pretrain_epochs:	100
+2023-05-08 11:03:08,982 - Discovery - num_train_epochs:	100
+2023-05-08 11:03:08,982 - Discovery - num_labels:	None
+2023-05-08 11:03:08,982 - Discovery - freeze_bert_parameters:	True
+2023-05-08 11:03:08,982 - Discovery - feat_dim:	768
+2023-05-08 11:03:08,982 - Discovery - warmup_proportion:	0.1
+2023-05-08 11:03:08,982 - Discovery - lr_pre:	5e-05
+2023-05-08 11:03:08,982 - Discovery - lr:	5e-05
+2023-05-08 11:03:08,982 - Discovery - loss_fct:	CrossEntropyLoss
+2023-05-08 11:03:08,982 - Discovery - activation:	tanh
+2023-05-08 11:03:08,982 - Discovery - train_batch_size:	128
+2023-05-08 11:03:08,982 - Discovery - eval_batch_size:	64
+2023-05-08 11:03:08,982 - Discovery - test_batch_size:	64
+2023-05-08 11:03:08,982 - Discovery - wait_patient:	20
+2023-05-08 11:03:08,982 - Discovery - ============================== End Params ==============================
+2023-05-08 11:03:08,982 - Discovery - Data and Model Preparation...
+2023-05-08 11:03:08,983 - Discovery - The number of known intents is 58
+2023-05-08 11:03:08,984 - Discovery - Lists of known labels are: ['pending_top_up', 'why_verify_identity', 'top_up_failed', 'supported_cards_and_currencies', 'exchange_via_app', 'declined_card_payment', 'unable_to_verify_identity', 'exchange_rate', 'passcode_forgotten', 'verify_my_identity', 'declined_cash_withdrawal', 'top_up_limits', 'apple_pay_or_google_pay', 'lost_or_stolen_card', 'lost_or_stolen_phone', 'balance_not_updated_after_cheque_or_cash_deposit', 'change_pin', 'getting_virtual_card', 'pin_blocked', 'get_disposable_virtual_card', 'top_up_reverted', 'reverted_card_payment?', 'topping_up_by_card', 'top_up_by_bank_transfer_charge', 'virtual_card_not_working', 'balance_not_updated_after_bank_transfer', 'request_refund', 'verify_source_of_funds', 'atm_support', 'disposable_card_limits', 'pending_transfer', 'age_limit', 'declined_transfer', 'card_acceptance', 'compromised_card', 'card_about_to_expire', 'edit_personal_details', 'getting_spare_card', 'top_up_by_card_charge', 'activate_my_card', 'exchange_charge', 'transfer_not_received_by_recipient', 'card_linking', 'wrong_exchange_rate_for_cash_withdrawal', 'card_swallowed', 'direct_debit_payment_not_recognised', 'transaction_charged_twice', 'extra_charge_on_statement', 'card_payment_wrong_exchange_rate', 'Refund_not_showing_up', 'wrong_amount_of_cash_received', 'card_not_working', 'automatic_top_up', 'terminate_account', 'card_payment_fee_charged', 'receiving_money', 'cash_withdrawal_charge', 'verify_top_up']
+2023-05-08 11:03:09,895 - Discovery - Number of labeled training samples = 673
+2023-05-08 11:03:09,895 - Discovery - Number of unlabeled training samples = 8330
+2023-05-08 11:03:09,899 - Discovery - Number of evaluation samples = 748
+2023-05-08 11:03:09,906 - Discovery - Number of testing samples = 3080
+2023-05-08 11:03:16,305 - Discovery - Freeze all parameters but the last layer for efficiency
+2023-05-08 11:03:27,518 - Discovery - Freeze all parameters but the last layer for efficiency
+2023-05-08 11:03:27,859 - Discovery - Pre-raining start...
+2023-05-08 11:03:30,320 - Discovery - ***** Epoch: 1: Eval results *****
+2023-05-08 11:03:30,321 - Discovery -   best_score = 0
+2023-05-08 11:03:30,321 - Discovery -   eval_score = 2.27
+2023-05-08 11:03:30,321 - Discovery -   train_loss = 4.065245787302653

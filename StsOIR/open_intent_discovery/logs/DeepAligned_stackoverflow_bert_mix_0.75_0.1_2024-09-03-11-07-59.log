@@ -1,0 +1,47 @@
+2024-09-03 11:07:59,864 - Discovery - Open Intent Discovery Begin...
+2024-09-03 11:07:59,864 - Discovery - Parameters Initialization...
+2024-09-03 11:07:59,865 - Discovery - ============================== Params ==============================
+2024-09-03 11:07:59,865 - Discovery - type:	open_intent_discovery
+2024-09-03 11:07:59,865 - Discovery - logger_name:	Discovery
+2024-09-03 11:07:59,865 - Discovery - log_dir:	logs
+2024-09-03 11:07:59,865 - Discovery - dataset:	stackoverflow
+2024-09-03 11:07:59,865 - Discovery - known_cls_ratio:	0.75
+2024-09-03 11:07:59,865 - Discovery - labeled_ratio:	0.1
+2024-09-03 11:07:59,865 - Discovery - cluster_num_factor:	1.0
+2024-09-03 11:07:59,865 - Discovery - method:	DeepAligned
+2024-09-03 11:07:59,865 - Discovery - train:	True
+2024-09-03 11:07:59,866 - Discovery - save_model:	False
+2024-09-03 11:07:59,866 - Discovery - backbone:	bert_mix
+2024-09-03 11:07:59,866 - Discovery - setting:	semi_supervised
+2024-09-03 11:07:59,866 - Discovery - config_file_name:	DeepAligned
+2024-09-03 11:07:59,866 - Discovery - seed:	6
+2024-09-03 11:07:59,866 - Discovery - temp:	0.3
+2024-09-03 11:07:59,866 - Discovery - gpu_id:	0
+2024-09-03 11:07:59,866 - Discovery - pipe_results_path:	pipe_results
+2024-09-03 11:07:59,866 - Discovery - data_dir:	/home/zhangpanpan/workspace/task/2022/09/testing/open_intent_discovery_20230417_bert_mix/../data
+2024-09-03 11:07:59,866 - Discovery - output_dir:	/home/zhangpanpan/workspace/task/2022/09/testing/open_intent_discovery_20230417_bert_mix/../outputs
+2024-09-03 11:07:59,866 - Discovery - model_dir:	models
+2024-09-03 11:07:59,866 - Discovery - result_dir:	results
+2024-09-03 11:07:59,866 - Discovery - results_file_name:	results_DeepAligned_2mix_stackoverflow_75_20240903.csv
+2024-09-03 11:07:59,866 - Discovery - save_results:	True
+2024-09-03 11:07:59,866 - Discovery - task_output_dir:	/home/zhangpanpan/workspace/task/2022/09/testing/open_intent_discovery_20230417_bert_mix/../outputs/open_intent_discovery
+2024-09-03 11:07:59,866 - Discovery - method_output_dir:	/home/zhangpanpan/workspace/task/2022/09/testing/open_intent_discovery_20230417_bert_mix/../outputs/open_intent_discovery/DeepAligned_stackoverflow_0.75_0.1_bert_mix_6
+2024-09-03 11:07:59,866 - Discovery - model_output_dir:	/home/zhangpanpan/workspace/task/2022/09/testing/open_intent_discovery_20230417_bert_mix/../outputs/open_intent_discovery/DeepAligned_stackoverflow_0.75_0.1_bert_mix_6/models
+2024-09-03 11:07:59,866 - Discovery - bert_model:	/home/zhangpanpan/downloads/lib/pretrained_models/uncased_L-12_H-768_A-12/
+2024-09-03 11:07:59,866 - Discovery - max_seq_length:	None
+2024-09-03 11:07:59,866 - Discovery - num_pretrain_epochs:	100
+2024-09-03 11:07:59,866 - Discovery - num_train_epochs:	100
+2024-09-03 11:07:59,866 - Discovery - num_labels:	None
+2024-09-03 11:07:59,866 - Discovery - freeze_bert_parameters:	True
+2024-09-03 11:07:59,866 - Discovery - feat_dim:	768
+2024-09-03 11:07:59,867 - Discovery - warmup_proportion:	0.1
+2024-09-03 11:07:59,867 - Discovery - lr_pre:	5e-05
+2024-09-03 11:07:59,867 - Discovery - lr:	5e-05
+2024-09-03 11:07:59,867 - Discovery - loss_fct:	CrossEntropyLoss
+2024-09-03 11:07:59,867 - Discovery - activation:	tanh
+2024-09-03 11:07:59,867 - Discovery - train_batch_size:	128
+2024-09-03 11:07:59,867 - Discovery - eval_batch_size:	64
+2024-09-03 11:07:59,867 - Discovery - test_batch_size:	64
+2024-09-03 11:07:59,867 - Discovery - wait_patient:	20
+2024-09-03 11:07:59,867 - Discovery - ============================== End Params ==============================
+2024-09-03 11:07:59,867 - Discovery - Data and Model Preparation...

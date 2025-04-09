@@ -1,0 +1,459 @@
+2023-05-12 16:46:13,819 - Discovery - Open Intent Discovery Begin...
+2023-05-12 16:46:13,819 - Discovery - Parameters Initialization...
+2023-05-12 16:46:13,820 - Discovery - ============================== Params ==============================
+2023-05-12 16:46:13,820 - Discovery - type:	open_intent_discovery
+2023-05-12 16:46:13,820 - Discovery - logger_name:	Discovery
+2023-05-12 16:46:13,820 - Discovery - log_dir:	logs
+2023-05-12 16:46:13,820 - Discovery - dataset:	banking
+2023-05-12 16:46:13,820 - Discovery - known_cls_ratio:	0.5
+2023-05-12 16:46:13,821 - Discovery - labeled_ratio:	0.1
+2023-05-12 16:46:13,821 - Discovery - cluster_num_factor:	1.0
+2023-05-12 16:46:13,821 - Discovery - method:	DeepAligned
+2023-05-12 16:46:13,821 - Discovery - train:	True
+2023-05-12 16:46:13,821 - Discovery - save_model:	False
+2023-05-12 16:46:13,821 - Discovery - backbone:	bert_mix
+2023-05-12 16:46:13,821 - Discovery - setting:	semi_supervised
+2023-05-12 16:46:13,821 - Discovery - config_file_name:	DeepAligned
+2023-05-12 16:46:13,821 - Discovery - seed:	4
+2023-05-12 16:46:13,821 - Discovery - temp:	0.3
+2023-05-12 16:46:13,821 - Discovery - gpu_id:	0
+2023-05-12 16:46:13,821 - Discovery - pipe_results_path:	pipe_results
+2023-05-12 16:46:13,821 - Discovery - data_dir:	/home/zhangpanpan/workspace/task/2022/09/testing/open_intent_discovery_20230417_bert_mix/../data
+2023-05-12 16:46:13,821 - Discovery - output_dir:	/home/zhangpanpan/workspace/task/2022/09/testing/open_intent_discovery_20230417_bert_mix/../outputs
+2023-05-12 16:46:13,821 - Discovery - model_dir:	models
+2023-05-12 16:46:13,821 - Discovery - result_dir:	results
+2023-05-12 16:46:13,821 - Discovery - results_file_name:	results_DeepAligned_2mix_banking_50_20230512.csv
+2023-05-12 16:46:13,821 - Discovery - save_results:	True
+2023-05-12 16:46:13,821 - Discovery - task_output_dir:	/home/zhangpanpan/workspace/task/2022/09/testing/open_intent_discovery_20230417_bert_mix/../outputs/open_intent_discovery
+2023-05-12 16:46:13,821 - Discovery - method_output_dir:	/home/zhangpanpan/workspace/task/2022/09/testing/open_intent_discovery_20230417_bert_mix/../outputs/open_intent_discovery/DeepAligned_banking_0.5_0.1_bert_mix_4
+2023-05-12 16:46:13,821 - Discovery - model_output_dir:	/home/zhangpanpan/workspace/task/2022/09/testing/open_intent_discovery_20230417_bert_mix/../outputs/open_intent_discovery/DeepAligned_banking_0.5_0.1_bert_mix_4/models
+2023-05-12 16:46:13,821 - Discovery - bert_model:	/home/zhangpanpan/downloads/lib/pretrained_models/uncased_L-12_H-768_A-12/
+2023-05-12 16:46:13,821 - Discovery - max_seq_length:	None
+2023-05-12 16:46:13,821 - Discovery - num_pretrain_epochs:	100
+2023-05-12 16:46:13,821 - Discovery - num_train_epochs:	100
+2023-05-12 16:46:13,821 - Discovery - num_labels:	None
+2023-05-12 16:46:13,821 - Discovery - freeze_bert_parameters:	True
+2023-05-12 16:46:13,821 - Discovery - feat_dim:	768
+2023-05-12 16:46:13,822 - Discovery - warmup_proportion:	0.1
+2023-05-12 16:46:13,822 - Discovery - lr_pre:	5e-05
+2023-05-12 16:46:13,822 - Discovery - lr:	5e-05
+2023-05-12 16:46:13,822 - Discovery - loss_fct:	CrossEntropyLoss
+2023-05-12 16:46:13,822 - Discovery - activation:	tanh
+2023-05-12 16:46:13,822 - Discovery - train_batch_size:	128
+2023-05-12 16:46:13,822 - Discovery - eval_batch_size:	64
+2023-05-12 16:46:13,822 - Discovery - test_batch_size:	64
+2023-05-12 16:46:13,822 - Discovery - wait_patient:	20
+2023-05-12 16:46:13,822 - Discovery - ============================== End Params ==============================
+2023-05-12 16:46:13,822 - Discovery - Data and Model Preparation...
+2023-05-12 16:46:13,823 - Discovery - The number of known intents is 38
+2023-05-12 16:46:13,824 - Discovery - Lists of known labels are: ['pending_transfer', 'transfer_not_received_by_recipient', 'top_up_limits', 'pending_top_up', 'card_linking', 'declined_card_payment', 'visa_or_mastercard', 'contactless_not_working', 'direct_debit_payment_not_recognised', 'atm_support', 'card_swallowed', 'why_verify_identity', 'lost_or_stolen_phone', 'automatic_top_up', 'fiat_currency_support', 'pending_cash_withdrawal', 'getting_virtual_card', 'cash_withdrawal_charge', 'card_about_to_expire', 'card_delivery_estimate', 'balance_not_updated_after_cheque_or_cash_deposit', 'balance_not_updated_after_bank_transfer', 'transfer_into_account', 'transaction_charged_twice', 'card_acceptance', 'get_physical_card', 'change_pin', 'card_payment_wrong_exchange_rate', 'transfer_fee_charged', 'card_arrival', 'card_payment_fee_charged', 'declined_cash_withdrawal', 'supported_cards_and_currencies', 'country_support', 'extra_charge_on_statement', 'card_payment_not_recognised', 'edit_personal_details', 'exchange_via_app']
+2023-05-12 16:46:15,279 - Discovery - Number of labeled training samples = 462
+2023-05-12 16:46:15,279 - Discovery - Number of unlabeled training samples = 8541
+2023-05-12 16:46:15,285 - Discovery - Number of evaluation samples = 513
+2023-05-12 16:46:15,298 - Discovery - Number of testing samples = 3080
+2023-05-12 16:46:27,269 - Discovery - Freeze all parameters but the last layer for efficiency
+2023-05-12 16:46:36,189 - Discovery - Freeze all parameters but the last layer for efficiency
+2023-05-12 16:46:36,490 - Discovery - Pre-raining start...
+2023-05-12 16:46:38,149 - Discovery - ***** Epoch: 1: Eval results *****
+2023-05-12 16:46:38,149 - Discovery -   best_score = 0
+2023-05-12 16:46:38,149 - Discovery -   eval_score = 4.48
+2023-05-12 16:46:38,149 - Discovery -   train_loss = 3.639880061149597
+2023-05-12 16:46:39,709 - Discovery - ***** Epoch: 2: Eval results *****
+2023-05-12 16:46:39,709 - Discovery -   best_score = 4.48
+2023-05-12 16:46:39,709 - Discovery -   eval_score = 7.41
+2023-05-12 16:46:39,709 - Discovery -   train_loss = 3.624281585216522
+2023-05-12 16:46:41,267 - Discovery - ***** Epoch: 3: Eval results *****
+2023-05-12 16:46:41,267 - Discovery -   best_score = 7.41
+2023-05-12 16:46:41,267 - Discovery -   eval_score = 12.28
+2023-05-12 16:46:41,267 - Discovery -   train_loss = 3.5792271494865417
+2023-05-12 16:46:42,836 - Discovery - ***** Epoch: 4: Eval results *****
+2023-05-12 16:46:42,837 - Discovery -   best_score = 12.28
+2023-05-12 16:46:42,837 - Discovery -   eval_score = 17.74
+2023-05-12 16:46:42,837 - Discovery -   train_loss = 3.5111209750175476
+2023-05-12 16:46:44,395 - Discovery - ***** Epoch: 5: Eval results *****
+2023-05-12 16:46:44,395 - Discovery -   best_score = 17.74
+2023-05-12 16:46:44,395 - Discovery -   eval_score = 26.71
+2023-05-12 16:46:44,395 - Discovery -   train_loss = 3.383432686328888
+2023-05-12 16:46:45,937 - Discovery - ***** Epoch: 6: Eval results *****
+2023-05-12 16:46:45,937 - Discovery -   best_score = 26.71
+2023-05-12 16:46:45,937 - Discovery -   eval_score = 36.84
+2023-05-12 16:46:45,937 - Discovery -   train_loss = 3.155592381954193
+2023-05-12 16:46:46,709 - Discovery - ***** Epoch: 7: Eval results *****
+2023-05-12 16:46:46,709 - Discovery -   best_score = 36.84
+2023-05-12 16:46:46,709 - Discovery -   eval_score = 44.44
+2023-05-12 16:46:46,710 - Discovery -   train_loss = 2.7612127661705017
+2023-05-12 16:46:47,492 - Discovery - ***** Epoch: 8: Eval results *****
+2023-05-12 16:46:47,492 - Discovery -   best_score = 44.44
+2023-05-12 16:46:47,492 - Discovery -   eval_score = 56.14
+2023-05-12 16:46:47,492 - Discovery -   train_loss = 2.231877326965332
+2023-05-12 16:46:48,268 - Discovery - ***** Epoch: 9: Eval results *****
+2023-05-12 16:46:48,268 - Discovery -   best_score = 56.14
+2023-05-12 16:46:48,268 - Discovery -   eval_score = 62.38
+2023-05-12 16:46:48,268 - Discovery -   train_loss = 1.752417892217636
+2023-05-12 16:46:49,039 - Discovery - ***** Epoch: 10: Eval results *****
+2023-05-12 16:46:49,039 - Discovery -   best_score = 62.38
+2023-05-12 16:46:49,039 - Discovery -   eval_score = 69.98
+2023-05-12 16:46:49,039 - Discovery -   train_loss = 1.3656205832958221
+2023-05-12 16:46:49,825 - Discovery - ***** Epoch: 11: Eval results *****
+2023-05-12 16:46:49,825 - Discovery -   best_score = 69.98
+2023-05-12 16:46:49,825 - Discovery -   eval_score = 73.29
+2023-05-12 16:46:49,825 - Discovery -   train_loss = 1.0409756302833557
+2023-05-12 16:46:50,667 - Discovery - ***** Epoch: 12: Eval results *****
+2023-05-12 16:46:50,667 - Discovery -   best_score = 73.29
+2023-05-12 16:46:50,667 - Discovery -   eval_score = 76.02
+2023-05-12 16:46:50,667 - Discovery -   train_loss = 0.7970240563154221
+2023-05-12 16:46:51,533 - Discovery - ***** Epoch: 13: Eval results *****
+2023-05-12 16:46:51,533 - Discovery -   best_score = 76.02
+2023-05-12 16:46:51,533 - Discovery -   eval_score = 78.95
+2023-05-12 16:46:51,533 - Discovery -   train_loss = 0.6157326698303223
+2023-05-12 16:46:52,347 - Discovery - ***** Epoch: 14: Eval results *****
+2023-05-12 16:46:52,347 - Discovery -   best_score = 78.95
+2023-05-12 16:46:52,347 - Discovery -   eval_score = 79.14
+2023-05-12 16:46:52,347 - Discovery -   train_loss = 0.4784479886293411
+2023-05-12 16:46:53,177 - Discovery - ***** Epoch: 15: Eval results *****
+2023-05-12 16:46:53,177 - Discovery -   best_score = 79.14
+2023-05-12 16:46:53,178 - Discovery -   eval_score = 79.53
+2023-05-12 16:46:53,178 - Discovery -   train_loss = 0.39043624699115753
+2023-05-12 16:46:53,990 - Discovery - ***** Epoch: 16: Eval results *****
+2023-05-12 16:46:53,990 - Discovery -   best_score = 79.53
+2023-05-12 16:46:53,990 - Discovery -   eval_score = 81.09
+2023-05-12 16:46:53,990 - Discovery -   train_loss = 0.3026302754878998
+2023-05-12 16:46:54,020 - Discovery - Pre-training finished...
+2023-05-12 16:46:54,040 - Discovery - Training Begin...
+2023-05-12 16:49:29,760 - Discovery - ***** Epoch: 1: Eval results *****
+2023-05-12 16:49:29,760 - Discovery -   best_cluster_silhouette_score = 0.15892877
+2023-05-12 16:49:29,760 - Discovery -   cluster_silhouette_score = 0.15885061362297612
+2023-05-12 16:49:29,760 - Discovery -   train_loss = 4.203886445139496
+2023-05-12 16:50:46,013 - Discovery - ***** Epoch: 2: Eval results *****
+2023-05-12 16:50:46,014 - Discovery -   best_cluster_silhouette_score = 0.15966283
+2023-05-12 16:50:46,014 - Discovery -   cluster_silhouette_score = 0.1769281370881466
+2023-05-12 16:50:46,014 - Discovery -   train_loss = 3.3823754720284906
+2023-05-12 16:52:23,750 - Discovery - ***** Epoch: 3: Eval results *****
+2023-05-12 16:52:23,751 - Discovery -   best_cluster_silhouette_score = 0.1780819
+2023-05-12 16:52:23,751 - Discovery -   cluster_silhouette_score = 0.20872119866703215
+2023-05-12 16:52:23,751 - Discovery -   train_loss = 2.4807456261675123
+2023-05-12 16:53:57,972 - Discovery - ***** Epoch: 4: Eval results *****
+2023-05-12 16:53:57,972 - Discovery -   best_cluster_silhouette_score = 0.21018042
+2023-05-12 16:53:57,972 - Discovery -   cluster_silhouette_score = 0.2414222288621922
+2023-05-12 16:53:57,972 - Discovery -   train_loss = 1.8153820239322287
+2023-05-12 16:55:21,151 - Discovery - ***** Epoch: 5: Eval results *****
+2023-05-12 16:55:21,151 - Discovery -   best_cluster_silhouette_score = 0.24333838
+2023-05-12 16:55:21,151 - Discovery -   cluster_silhouette_score = 0.26867035062796724
+2023-05-12 16:55:21,151 - Discovery -   train_loss = 1.2879045588869444
+2023-05-12 16:56:35,753 - Discovery - ***** Epoch: 6: Eval results *****
+2023-05-12 16:56:35,753 - Discovery -   best_cluster_silhouette_score = 0.27017492
+2023-05-12 16:56:35,753 - Discovery -   cluster_silhouette_score = 0.2863590932788517
+2023-05-12 16:56:35,753 - Discovery -   train_loss = 1.0778553930806443
+2023-05-12 16:57:56,014 - Discovery - ***** Epoch: 7: Eval results *****
+2023-05-12 16:57:56,014 - Discovery -   best_cluster_silhouette_score = 0.28757766
+2023-05-12 16:57:56,014 - Discovery -   cluster_silhouette_score = 0.32244449718575124
+2023-05-12 16:57:56,014 - Discovery -   train_loss = 0.8942762034040102
+2023-05-12 16:59:07,656 - Discovery - ***** Epoch: 8: Eval results *****
+2023-05-12 16:59:07,656 - Discovery -   best_cluster_silhouette_score = 0.3236759
+2023-05-12 16:59:07,656 - Discovery -   cluster_silhouette_score = 0.3361483799764523
+2023-05-12 16:59:07,656 - Discovery -   train_loss = 0.6474390185215104
+2023-05-12 17:00:15,377 - Discovery - ***** Epoch: 9: Eval results *****
+2023-05-12 17:00:15,377 - Discovery -   best_cluster_silhouette_score = 0.3372954
+2023-05-12 17:00:15,377 - Discovery -   cluster_silhouette_score = 0.36317004839571504
+2023-05-12 17:00:15,377 - Discovery -   train_loss = 0.5599932380965058
+2023-05-12 17:01:31,309 - Discovery - ***** Epoch: 10: Eval results *****
+2023-05-12 17:01:31,309 - Discovery -   best_cluster_silhouette_score = 0.36453605
+2023-05-12 17:01:31,309 - Discovery -   cluster_silhouette_score = 0.36929058255187874
+2023-05-12 17:01:31,309 - Discovery -   train_loss = 0.5559966790844018
+2023-05-12 17:02:53,400 - Discovery - ***** Epoch: 11: Eval results *****
+2023-05-12 17:02:53,400 - Discovery -   best_cluster_silhouette_score = 0.37043035
+2023-05-12 17:02:53,401 - Discovery -   cluster_silhouette_score = 0.38009984176569067
+2023-05-12 17:02:53,401 - Discovery -   train_loss = 0.46870216118617797
+2023-05-12 17:04:22,617 - Discovery - ***** Epoch: 12: Eval results *****
+2023-05-12 17:04:22,617 - Discovery -   best_cluster_silhouette_score = 0.3811364
+2023-05-12 17:04:22,617 - Discovery -   cluster_silhouette_score = 0.39855477348892476
+2023-05-12 17:04:22,617 - Discovery -   train_loss = 0.407285632591852
+2023-05-12 17:05:35,720 - Discovery - ***** Epoch: 13: Eval results *****
+2023-05-12 17:05:35,720 - Discovery -   best_cluster_silhouette_score = 0.3997957
+2023-05-12 17:05:35,720 - Discovery -   cluster_silhouette_score = 0.4072977181940042
+2023-05-12 17:05:35,720 - Discovery -   train_loss = 0.3352817636980137
+2023-05-12 17:06:47,315 - Discovery - ***** Epoch: 14: Eval results *****
+2023-05-12 17:06:47,316 - Discovery -   best_cluster_silhouette_score = 0.4084858
+2023-05-12 17:06:47,316 - Discovery -   cluster_silhouette_score = 0.4100863707940004
+2023-05-12 17:06:47,316 - Discovery -   train_loss = 0.36325555074382837
+2023-05-12 17:07:50,249 - Discovery - ***** Epoch: 15: Eval results *****
+2023-05-12 17:07:50,250 - Discovery -   best_cluster_silhouette_score = 0.41109535
+2023-05-12 17:07:50,250 - Discovery -   cluster_silhouette_score = 0.4206086658389689
+2023-05-12 17:07:50,250 - Discovery -   train_loss = 0.32873392503866006
+2023-05-12 17:08:50,437 - Discovery - ***** Epoch: 16: Eval results *****
+2023-05-12 17:08:50,438 - Discovery -   best_cluster_silhouette_score = 0.42177567
+2023-05-12 17:08:50,438 - Discovery -   cluster_silhouette_score = 0.4283089755745706
+2023-05-12 17:08:50,438 - Discovery -   train_loss = 0.3053243407900904
+2023-05-12 17:09:50,336 - Discovery - ***** Epoch: 17: Eval results *****
+2023-05-12 17:09:50,337 - Discovery -   best_cluster_silhouette_score = 0.42946106
+2023-05-12 17:09:50,337 - Discovery -   cluster_silhouette_score = 0.43793678225356236
+2023-05-12 17:09:50,337 - Discovery -   train_loss = 0.27227585227556633
+2023-05-12 17:10:53,170 - Discovery - ***** Epoch: 18: Eval results *****
+2023-05-12 17:10:53,170 - Discovery -   best_cluster_silhouette_score = 0.43919325
+2023-05-12 17:10:53,170 - Discovery -   cluster_silhouette_score = 0.4388246220411376
+2023-05-12 17:10:53,170 - Discovery -   train_loss = 0.28440201597314485
+2023-05-12 17:11:59,674 - Discovery - ***** Epoch: 19: Eval results *****
+2023-05-12 17:11:59,674 - Discovery -   best_cluster_silhouette_score = 0.43993387
+2023-05-12 17:11:59,674 - Discovery -   cluster_silhouette_score = 0.43806967848797707
+2023-05-12 17:11:59,674 - Discovery -   train_loss = 0.2975811387451602
+2023-05-12 17:13:11,312 - Discovery - ***** Epoch: 20: Eval results *****
+2023-05-12 17:13:11,312 - Discovery -   best_cluster_silhouette_score = 0.43993387
+2023-05-12 17:13:11,312 - Discovery -   cluster_silhouette_score = 0.4435473328400547
+2023-05-12 17:13:11,312 - Discovery -   train_loss = 0.25969472296640905
+2023-05-12 17:14:26,742 - Discovery - ***** Epoch: 21: Eval results *****
+2023-05-12 17:14:26,742 - Discovery -   best_cluster_silhouette_score = 0.4445783
+2023-05-12 17:14:26,743 - Discovery -   cluster_silhouette_score = 0.4368442940502211
+2023-05-12 17:14:26,743 - Discovery -   train_loss = 0.24147240670633988
+2023-05-12 17:15:39,192 - Discovery - ***** Epoch: 22: Eval results *****
+2023-05-12 17:15:39,192 - Discovery -   best_cluster_silhouette_score = 0.4445783
+2023-05-12 17:15:39,193 - Discovery -   cluster_silhouette_score = 0.4515752003454784
+2023-05-12 17:15:39,193 - Discovery -   train_loss = 0.2790008089701894
+2023-05-12 17:16:53,086 - Discovery - ***** Epoch: 23: Eval results *****
+2023-05-12 17:16:53,087 - Discovery -   best_cluster_silhouette_score = 0.45260143
+2023-05-12 17:16:53,087 - Discovery -   cluster_silhouette_score = 0.4467084044991768
+2023-05-12 17:16:53,087 - Discovery -   train_loss = 0.22863567274221233
+2023-05-12 17:18:08,548 - Discovery - ***** Epoch: 24: Eval results *****
+2023-05-12 17:18:08,548 - Discovery -   best_cluster_silhouette_score = 0.45260143
+2023-05-12 17:18:08,548 - Discovery -   cluster_silhouette_score = 0.4477997296240989
+2023-05-12 17:18:08,548 - Discovery -   train_loss = 0.25187654300055035
+2023-05-12 17:19:22,968 - Discovery - ***** Epoch: 25: Eval results *****
+2023-05-12 17:19:22,968 - Discovery -   best_cluster_silhouette_score = 0.45260143
+2023-05-12 17:19:22,968 - Discovery -   cluster_silhouette_score = 0.44373770154810366
+2023-05-12 17:19:22,968 - Discovery -   train_loss = 0.295155551546896
+2023-05-12 17:20:35,766 - Discovery - ***** Epoch: 26: Eval results *****
+2023-05-12 17:20:35,766 - Discovery -   best_cluster_silhouette_score = 0.45260143
+2023-05-12 17:20:35,767 - Discovery -   cluster_silhouette_score = 0.4398535720256372
+2023-05-12 17:20:35,767 - Discovery -   train_loss = 0.3284532213714761
+2023-05-12 17:21:52,493 - Discovery - ***** Epoch: 27: Eval results *****
+2023-05-12 17:21:52,494 - Discovery -   best_cluster_silhouette_score = 0.45260143
+2023-05-12 17:21:52,494 - Discovery -   cluster_silhouette_score = 0.4498278008385141
+2023-05-12 17:21:52,494 - Discovery -   train_loss = 0.3447031475288767
+2023-05-12 17:23:06,721 - Discovery - ***** Epoch: 28: Eval results *****
+2023-05-12 17:23:06,722 - Discovery -   best_cluster_silhouette_score = 0.45260143
+2023-05-12 17:23:06,722 - Discovery -   cluster_silhouette_score = 0.44162236600930127
+2023-05-12 17:23:06,722 - Discovery -   train_loss = 0.2846313982572354
+2023-05-12 17:24:14,083 - Discovery - ***** Epoch: 29: Eval results *****
+2023-05-12 17:24:14,083 - Discovery -   best_cluster_silhouette_score = 0.45260143
+2023-05-12 17:24:14,083 - Discovery -   cluster_silhouette_score = 0.4600333350777139
+2023-05-12 17:24:14,083 - Discovery -   train_loss = 0.2712437001542306
+2023-05-12 17:25:12,628 - Discovery - ***** Epoch: 30: Eval results *****
+2023-05-12 17:25:12,628 - Discovery -   best_cluster_silhouette_score = 0.46107337
+2023-05-12 17:25:12,628 - Discovery -   cluster_silhouette_score = 0.4596361577624438
+2023-05-12 17:25:12,628 - Discovery -   train_loss = 0.2531262762109998
+2023-05-12 17:26:11,426 - Discovery - ***** Epoch: 31: Eval results *****
+2023-05-12 17:26:11,426 - Discovery -   best_cluster_silhouette_score = 0.46107337
+2023-05-12 17:26:11,426 - Discovery -   cluster_silhouette_score = 0.46540073583098646
+2023-05-12 17:26:11,426 - Discovery -   train_loss = 0.28246041544726197
+2023-05-12 17:27:10,976 - Discovery - ***** Epoch: 32: Eval results *****
+2023-05-12 17:27:10,976 - Discovery -   best_cluster_silhouette_score = 0.46654826
+2023-05-12 17:27:10,977 - Discovery -   cluster_silhouette_score = 0.47184739598832093
+2023-05-12 17:27:10,977 - Discovery -   train_loss = 0.24950907972287123
+2023-05-12 17:28:10,503 - Discovery - ***** Epoch: 33: Eval results *****
+2023-05-12 17:28:10,503 - Discovery -   best_cluster_silhouette_score = 0.47288275
+2023-05-12 17:28:10,503 - Discovery -   cluster_silhouette_score = 0.4727474680120236
+2023-05-12 17:28:10,503 - Discovery -   train_loss = 0.2576918069955329
+2023-05-12 17:29:06,600 - Discovery - ***** Epoch: 34: Eval results *****
+2023-05-12 17:29:06,601 - Discovery -   best_cluster_silhouette_score = 0.47391468
+2023-05-12 17:29:06,601 - Discovery -   cluster_silhouette_score = 0.4745271163647791
+2023-05-12 17:29:06,601 - Discovery -   train_loss = 0.2086655468168393
+2023-05-12 17:30:07,827 - Discovery - ***** Epoch: 35: Eval results *****
+2023-05-12 17:30:07,827 - Discovery -   best_cluster_silhouette_score = 0.4756489
+2023-05-12 17:30:07,827 - Discovery -   cluster_silhouette_score = 0.4696453941116315
+2023-05-12 17:30:07,827 - Discovery -   train_loss = 0.21235592852176075
+2023-05-12 17:31:07,076 - Discovery - ***** Epoch: 36: Eval results *****
+2023-05-12 17:31:07,076 - Discovery -   best_cluster_silhouette_score = 0.4756489
+2023-05-12 17:31:07,076 - Discovery -   cluster_silhouette_score = 0.4783123710877971
+2023-05-12 17:31:07,076 - Discovery -   train_loss = 0.22067497124974156
+2023-05-12 17:32:09,861 - Discovery - ***** Epoch: 37: Eval results *****
+2023-05-12 17:32:09,862 - Discovery -   best_cluster_silhouette_score = 0.47950613
+2023-05-12 17:32:09,862 - Discovery -   cluster_silhouette_score = 0.4737883472872708
+2023-05-12 17:32:09,862 - Discovery -   train_loss = 0.21189352030485448
+2023-05-12 17:33:08,154 - Discovery - ***** Epoch: 38: Eval results *****
+2023-05-12 17:33:08,154 - Discovery -   best_cluster_silhouette_score = 0.47950613
+2023-05-12 17:33:08,154 - Discovery -   cluster_silhouette_score = 0.4652526870886663
+2023-05-12 17:33:08,154 - Discovery -   train_loss = 0.22188096430519938
+2023-05-12 17:34:11,896 - Discovery - ***** Epoch: 39: Eval results *****
+2023-05-12 17:34:11,896 - Discovery -   best_cluster_silhouette_score = 0.47950613
+2023-05-12 17:34:11,896 - Discovery -   cluster_silhouette_score = 0.4756417723138079
+2023-05-12 17:34:11,896 - Discovery -   train_loss = 0.27522705558320165
+2023-05-12 17:35:22,750 - Discovery - ***** Epoch: 40: Eval results *****
+2023-05-12 17:35:22,750 - Discovery -   best_cluster_silhouette_score = 0.47950613
+2023-05-12 17:35:22,750 - Discovery -   cluster_silhouette_score = 0.47528753677058067
+2023-05-12 17:35:22,751 - Discovery -   train_loss = 0.22366162106184892
+2023-05-12 17:36:37,345 - Discovery - ***** Epoch: 41: Eval results *****
+2023-05-12 17:36:37,345 - Discovery -   best_cluster_silhouette_score = 0.47950613
+2023-05-12 17:36:37,345 - Discovery -   cluster_silhouette_score = 0.4742966503161613
+2023-05-12 17:36:37,346 - Discovery -   train_loss = 0.21528889417228564
+2023-05-12 17:37:51,540 - Discovery - ***** Epoch: 42: Eval results *****
+2023-05-12 17:37:51,540 - Discovery -   best_cluster_silhouette_score = 0.47950613
+2023-05-12 17:37:51,540 - Discovery -   cluster_silhouette_score = 0.47166813514003764
+2023-05-12 17:37:51,540 - Discovery -   train_loss = 0.23370065225262038
+2023-05-12 17:39:08,090 - Discovery - ***** Epoch: 43: Eval results *****
+2023-05-12 17:39:08,091 - Discovery -   best_cluster_silhouette_score = 0.47950613
+2023-05-12 17:39:08,091 - Discovery -   cluster_silhouette_score = 0.47053689749849825
+2023-05-12 17:39:08,091 - Discovery -   train_loss = 0.27611744550751965
+2023-05-12 17:40:26,593 - Discovery - ***** Epoch: 44: Eval results *****
+2023-05-12 17:40:26,593 - Discovery -   best_cluster_silhouette_score = 0.47950613
+2023-05-12 17:40:26,593 - Discovery -   cluster_silhouette_score = 0.47857626562970035
+2023-05-12 17:40:26,593 - Discovery -   train_loss = 0.26250904976901873
+2023-05-12 17:41:52,979 - Discovery - ***** Epoch: 45: Eval results *****
+2023-05-12 17:41:52,979 - Discovery -   best_cluster_silhouette_score = 0.47969323
+2023-05-12 17:41:52,979 - Discovery -   cluster_silhouette_score = 0.47335527108752745
+2023-05-12 17:41:52,979 - Discovery -   train_loss = 0.18993573174090453
+2023-05-12 17:43:11,425 - Discovery - ***** Epoch: 46: Eval results *****
+2023-05-12 17:43:11,426 - Discovery -   best_cluster_silhouette_score = 0.47969323
+2023-05-12 17:43:11,426 - Discovery -   cluster_silhouette_score = 0.4765104016005137
+2023-05-12 17:43:11,426 - Discovery -   train_loss = 0.22433525633434176
+2023-05-12 17:44:34,557 - Discovery - ***** Epoch: 47: Eval results *****
+2023-05-12 17:44:34,557 - Discovery -   best_cluster_silhouette_score = 0.47969323
+2023-05-12 17:44:34,557 - Discovery -   cluster_silhouette_score = 0.483686201716728
+2023-05-12 17:44:34,557 - Discovery -   train_loss = 0.23477927626858294
+2023-05-12 17:45:50,051 - Discovery - ***** Epoch: 48: Eval results *****
+2023-05-12 17:45:50,051 - Discovery -   best_cluster_silhouette_score = 0.48489624
+2023-05-12 17:45:50,051 - Discovery -   cluster_silhouette_score = 0.4854484756632696
+2023-05-12 17:45:50,051 - Discovery -   train_loss = 0.22136956432335814
+2023-05-12 17:47:04,712 - Discovery - ***** Epoch: 49: Eval results *****
+2023-05-12 17:47:04,712 - Discovery -   best_cluster_silhouette_score = 0.48651886
+2023-05-12 17:47:04,712 - Discovery -   cluster_silhouette_score = 0.4737920967247426
+2023-05-12 17:47:04,713 - Discovery -   train_loss = 0.2425227511516759
+2023-05-12 17:48:18,775 - Discovery - ***** Epoch: 50: Eval results *****
+2023-05-12 17:48:18,775 - Discovery -   best_cluster_silhouette_score = 0.48651886
+2023-05-12 17:48:18,775 - Discovery -   cluster_silhouette_score = 0.47211811955182825
+2023-05-12 17:48:18,775 - Discovery -   train_loss = 0.2951741878625373
+2023-05-12 17:49:32,249 - Discovery - ***** Epoch: 51: Eval results *****
+2023-05-12 17:49:32,249 - Discovery -   best_cluster_silhouette_score = 0.48651886
+2023-05-12 17:49:32,250 - Discovery -   cluster_silhouette_score = 0.4751019294486902
+2023-05-12 17:49:32,250 - Discovery -   train_loss = 0.2847088066415048
+2023-05-12 17:50:46,306 - Discovery - ***** Epoch: 52: Eval results *****
+2023-05-12 17:50:46,306 - Discovery -   best_cluster_silhouette_score = 0.48651886
+2023-05-12 17:50:46,307 - Discovery -   cluster_silhouette_score = 0.476664323100687
+2023-05-12 17:50:46,307 - Discovery -   train_loss = 0.3242384614029401
+2023-05-12 17:52:01,852 - Discovery - ***** Epoch: 53: Eval results *****
+2023-05-12 17:52:01,852 - Discovery -   best_cluster_silhouette_score = 0.48651886
+2023-05-12 17:52:01,852 - Discovery -   cluster_silhouette_score = 0.49308134938939957
+2023-05-12 17:52:01,852 - Discovery -   train_loss = 0.23129303039799273
+2023-05-12 17:53:13,014 - Discovery - ***** Epoch: 54: Eval results *****
+2023-05-12 17:53:13,014 - Discovery -   best_cluster_silhouette_score = 0.494196
+2023-05-12 17:53:13,014 - Discovery -   cluster_silhouette_score = 0.48689428564945797
+2023-05-12 17:53:13,014 - Discovery -   train_loss = 0.21299176852048282
+2023-05-12 17:54:14,976 - Discovery - ***** Epoch: 55: Eval results *****
+2023-05-12 17:54:14,976 - Discovery -   best_cluster_silhouette_score = 0.494196
+2023-05-12 17:54:14,976 - Discovery -   cluster_silhouette_score = 0.49147257061535515
+2023-05-12 17:54:14,976 - Discovery -   train_loss = 0.17104501749428225
+2023-05-12 17:55:10,919 - Discovery - ***** Epoch: 56: Eval results *****
+2023-05-12 17:55:10,920 - Discovery -   best_cluster_silhouette_score = 0.494196
+2023-05-12 17:55:10,920 - Discovery -   cluster_silhouette_score = 0.49014660155622686
+2023-05-12 17:55:10,920 - Discovery -   train_loss = 0.19671118993994216
+2023-05-12 17:56:07,172 - Discovery - ***** Epoch: 57: Eval results *****
+2023-05-12 17:56:07,172 - Discovery -   best_cluster_silhouette_score = 0.494196
+2023-05-12 17:56:07,172 - Discovery -   cluster_silhouette_score = 0.49040417811016085
+2023-05-12 17:56:07,172 - Discovery -   train_loss = 0.24452737571907715
+2023-05-12 17:57:04,998 - Discovery - ***** Epoch: 58: Eval results *****
+2023-05-12 17:57:04,998 - Discovery -   best_cluster_silhouette_score = 0.494196
+2023-05-12 17:57:04,998 - Discovery -   cluster_silhouette_score = 0.49393326845997554
+2023-05-12 17:57:04,998 - Discovery -   train_loss = 0.2423240019821785
+2023-05-12 17:58:04,740 - Discovery - ***** Epoch: 59: Eval results *****
+2023-05-12 17:58:04,740 - Discovery -   best_cluster_silhouette_score = 0.49515498
+2023-05-12 17:58:04,740 - Discovery -   cluster_silhouette_score = 0.493471281920357
+2023-05-12 17:58:04,741 - Discovery -   train_loss = 0.2085450528792932
+2023-05-12 17:59:00,867 - Discovery - ***** Epoch: 60: Eval results *****
+2023-05-12 17:59:00,867 - Discovery -   best_cluster_silhouette_score = 0.49515498
+2023-05-12 17:59:00,867 - Discovery -   cluster_silhouette_score = 0.5002383028579885
+2023-05-12 17:59:00,867 - Discovery -   train_loss = 0.206671253633751
+2023-05-12 17:59:58,993 - Discovery - ***** Epoch: 61: Eval results *****
+2023-05-12 17:59:58,993 - Discovery -   best_cluster_silhouette_score = 0.5014485
+2023-05-12 17:59:58,993 - Discovery -   cluster_silhouette_score = 0.4877599236662395
+2023-05-12 17:59:58,993 - Discovery -   train_loss = 0.17162476511488498
+2023-05-12 18:01:06,229 - Discovery - ***** Epoch: 62: Eval results *****
+2023-05-12 18:01:06,229 - Discovery -   best_cluster_silhouette_score = 0.5014485
+2023-05-12 18:01:06,229 - Discovery -   cluster_silhouette_score = 0.47155269432521313
+2023-05-12 18:01:06,229 - Discovery -   train_loss = 0.2957973132880641
+2023-05-12 18:02:16,135 - Discovery - ***** Epoch: 63: Eval results *****
+2023-05-12 18:02:16,135 - Discovery -   best_cluster_silhouette_score = 0.5014485
+2023-05-12 18:02:16,135 - Discovery -   cluster_silhouette_score = 0.49072414877236475
+2023-05-12 18:02:16,135 - Discovery -   train_loss = 0.23168501992460708
+2023-05-12 18:03:25,244 - Discovery - ***** Epoch: 64: Eval results *****
+2023-05-12 18:03:25,244 - Discovery -   best_cluster_silhouette_score = 0.5014485
+2023-05-12 18:03:25,244 - Discovery -   cluster_silhouette_score = 0.4879164573971159
+2023-05-12 18:03:25,244 - Discovery -   train_loss = 0.32504610255570476
+2023-05-12 18:04:28,486 - Discovery - ***** Epoch: 65: Eval results *****
+2023-05-12 18:04:28,486 - Discovery -   best_cluster_silhouette_score = 0.5014485
+2023-05-12 18:04:28,486 - Discovery -   cluster_silhouette_score = 0.487605404433192
+2023-05-12 18:04:28,486 - Discovery -   train_loss = 0.2255273519057623
+2023-05-12 18:05:41,406 - Discovery - ***** Epoch: 66: Eval results *****
+2023-05-12 18:05:41,406 - Discovery -   best_cluster_silhouette_score = 0.5014485
+2023-05-12 18:05:41,406 - Discovery -   cluster_silhouette_score = 0.48831874831710953
+2023-05-12 18:05:41,406 - Discovery -   train_loss = 0.26599027153471827
+2023-05-12 18:06:49,173 - Discovery - ***** Epoch: 67: Eval results *****
+2023-05-12 18:06:49,173 - Discovery -   best_cluster_silhouette_score = 0.5014485
+2023-05-12 18:06:49,173 - Discovery -   cluster_silhouette_score = 0.49025928950432346
+2023-05-12 18:06:49,174 - Discovery -   train_loss = 0.26358741437885125
+2023-05-12 18:07:59,506 - Discovery - ***** Epoch: 68: Eval results *****
+2023-05-12 18:07:59,506 - Discovery -   best_cluster_silhouette_score = 0.5014485
+2023-05-12 18:07:59,506 - Discovery -   cluster_silhouette_score = 0.47788821937249515
+2023-05-12 18:07:59,506 - Discovery -   train_loss = 0.29322380289225514
+2023-05-12 18:09:09,317 - Discovery - ***** Epoch: 69: Eval results *****
+2023-05-12 18:09:09,317 - Discovery -   best_cluster_silhouette_score = 0.5014485
+2023-05-12 18:09:09,317 - Discovery -   cluster_silhouette_score = 0.47757493276802493
+2023-05-12 18:09:09,317 - Discovery -   train_loss = 0.3165163461801032
+2023-05-12 18:10:20,730 - Discovery - ***** Epoch: 70: Eval results *****
+2023-05-12 18:10:20,731 - Discovery -   best_cluster_silhouette_score = 0.5014485
+2023-05-12 18:10:20,731 - Discovery -   cluster_silhouette_score = 0.4938688970134839
+2023-05-12 18:10:20,731 - Discovery -   train_loss = 0.2556054095776988
+2023-05-12 18:11:40,319 - Discovery - ***** Epoch: 71: Eval results *****
+2023-05-12 18:11:40,319 - Discovery -   best_cluster_silhouette_score = 0.5014485
+2023-05-12 18:11:40,319 - Discovery -   cluster_silhouette_score = 0.4926270578195654
+2023-05-12 18:11:40,319 - Discovery -   train_loss = 0.2593412530464186
+2023-05-12 18:12:56,262 - Discovery - ***** Epoch: 72: Eval results *****
+2023-05-12 18:12:56,262 - Discovery -   best_cluster_silhouette_score = 0.5014485
+2023-05-12 18:12:56,262 - Discovery -   cluster_silhouette_score = 0.4792880116578696
+2023-05-12 18:12:56,262 - Discovery -   train_loss = 0.27528389333419395
+2023-05-12 18:14:11,219 - Discovery - ***** Epoch: 73: Eval results *****
+2023-05-12 18:14:11,219 - Discovery -   best_cluster_silhouette_score = 0.5014485
+2023-05-12 18:14:11,219 - Discovery -   cluster_silhouette_score = 0.479187414529238
+2023-05-12 18:14:11,219 - Discovery -   train_loss = 0.3435766121871035
+2023-05-12 18:15:28,990 - Discovery - ***** Epoch: 74: Eval results *****
+2023-05-12 18:15:28,990 - Discovery -   best_cluster_silhouette_score = 0.5014485
+2023-05-12 18:15:28,990 - Discovery -   cluster_silhouette_score = 0.4736118754993554
+2023-05-12 18:15:28,990 - Discovery -   train_loss = 0.3991268045255836
+2023-05-12 18:16:43,812 - Discovery - ***** Epoch: 75: Eval results *****
+2023-05-12 18:16:43,813 - Discovery -   best_cluster_silhouette_score = 0.5014485
+2023-05-12 18:16:43,813 - Discovery -   cluster_silhouette_score = 0.4707841847502408
+2023-05-12 18:16:43,813 - Discovery -   train_loss = 0.41725076546131723
+2023-05-12 18:17:58,177 - Discovery - ***** Epoch: 76: Eval results *****
+2023-05-12 18:17:58,177 - Discovery -   best_cluster_silhouette_score = 0.5014485
+2023-05-12 18:17:58,177 - Discovery -   cluster_silhouette_score = 0.4652505899604281
+2023-05-12 18:17:58,177 - Discovery -   train_loss = 0.44224185863850823
+2023-05-12 18:19:11,574 - Discovery - ***** Epoch: 77: Eval results *****
+2023-05-12 18:19:11,575 - Discovery -   best_cluster_silhouette_score = 0.5014485
+2023-05-12 18:19:11,575 - Discovery -   cluster_silhouette_score = 0.47559491901345846
+2023-05-12 18:19:11,575 - Discovery -   train_loss = 0.30548100855568766
+2023-05-12 18:20:20,457 - Discovery - ***** Epoch: 78: Eval results *****
+2023-05-12 18:20:20,457 - Discovery -   best_cluster_silhouette_score = 0.5014485
+2023-05-12 18:20:20,457 - Discovery -   cluster_silhouette_score = 0.477772839561206
+2023-05-12 18:20:20,457 - Discovery -   train_loss = 0.3387416739698867
+2023-05-12 18:21:18,913 - Discovery - ***** Epoch: 79: Eval results *****
+2023-05-12 18:21:18,913 - Discovery -   best_cluster_silhouette_score = 0.5014485
+2023-05-12 18:21:18,913 - Discovery -   cluster_silhouette_score = 0.4730479271591569
+2023-05-12 18:21:18,913 - Discovery -   train_loss = 0.35016208383398995
+2023-05-12 18:22:25,811 - Discovery - ***** Epoch: 80: Eval results *****
+2023-05-12 18:22:25,811 - Discovery -   best_cluster_silhouette_score = 0.5014485
+2023-05-12 18:22:25,811 - Discovery -   cluster_silhouette_score = 0.48034331599155866
+2023-05-12 18:22:25,811 - Discovery -   train_loss = 0.39524618001051354
+2023-05-12 18:22:25,812 - Discovery - Training Finished...
+2023-05-12 18:22:25,812 - Discovery - Testing begin...
+2023-05-12 18:22:58,742 - Discovery - ***** Test: Confusion Matrix *****
+2023-05-12 18:22:58,743 - Discovery - [[ 0  0  0 ...  0  0  0]
+ [ 0  0  0 ...  0  0  0]
+ [ 0 25  0 ...  0  0  0]
+ ...
+ [ 0  0  0 ...  0  0  0]
+ [ 1  0  0 ...  0  0  0]
+ [ 7  0  0 ...  0  0  0]]
+2023-05-12 18:22:58,743 - Discovery - ***** Test results *****
+2023-05-12 18:22:58,743 - Discovery -   ACC = 58.31
+2023-05-12 18:22:58,743 - Discovery -   ARI = 46.04
+2023-05-12 18:22:58,743 - Discovery -   NMI = 75.87
+2023-05-12 18:22:58,743 - Discovery - Testing finished...
+2023-05-12 18:22:58,743 - Discovery - Results saved in results/results_DeepAligned_2mix_banking_50_20230512.csv
+2023-05-12 18:22:58,797 - Discovery - Open Intent Discovery Finished...
